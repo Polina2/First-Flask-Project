@@ -18,9 +18,16 @@
 </style>
 <body>
 <p>Введите номер</p>
-<form method="post"><p><small>+7</small>
-<input type="tel" name="tel" pattern="[0-9]{10}" />
-<input type="submit" value="Отправить"/>
-</p></form>
+<form action="index" method="post"><p>
+    <small>+7</small>
+    <input type="tel" name="tel" pattern="[0-9]{10}" />
+    <input type="submit" value="Отправить"/></p>
+    <p>
+        {% if region != '' and mobile_operator != '' %}
+        Регион: {{ region }}<br>
+        Оператор: {{ mobile_operator }}
+        {% endif %}
+    </p>
+</form>
 </body>
 </html>
