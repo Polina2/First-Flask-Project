@@ -1,7 +1,7 @@
 <html lang="ru">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
-    <title>Номера</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>РќРѕРјРµСЂР°</title>
 </head>
 <style>
     body {
@@ -17,15 +17,15 @@
     }
 </style>
 <body>
-<p>Введите номер</p>
+<p>Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ</p>
 <form action="index" method="post"><p>
     <small>+7</small>
     <input type="tel" name="tel" pattern="[0-9]{10}" />
-    <input type="submit" value="Отправить"/></p>
+    <input type="submit" value="РћС‚РїСЂР°РІРёС‚СЊ"/></p>
     <p>
         {% if region != '' and mobile_operator != '' %}
-        Регион: {{ region }}<br>
-        Оператор: {{ mobile_operator }}
+        Р РµРіРёРѕРЅ: {{ region }}<br>
+        РћРїРµСЂР°С‚РѕСЂ: {{ mobile_operator }}
         {% endif %}
     </p>
 </form>
