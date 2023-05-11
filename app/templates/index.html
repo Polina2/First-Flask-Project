@@ -5,7 +5,8 @@
 </head>
 <style>
     body {
-        background: #A5D6D9 url("background.png");
+        background-image: url(../static/background.png);
+        background-color: #A5D6D9;
         background-size: cover;
     }
     p {
@@ -17,9 +18,9 @@
 </style>
 <body>
 <p>Введите номер</p>
-<form><p><small>+7</small>
-<input type="tel" name="tel" pattern="/d{10}">
-<input type="submit" value="Отправить">
+<form method="post"><p><small>+7</small>
+<input type="tel" name="tel" pattern="[0-9]{10}" />
+<input type="submit" value="Отправить"/>
 </p></form>
 </body>
 </html>
