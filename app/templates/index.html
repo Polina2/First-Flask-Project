@@ -24,6 +24,7 @@
     <input type="submit" value="Отправить"/></p>
     <p>
         {% if region != '' and mobile_operator != '' %}
+        Номер: {{ request_number }}<br>
         Регион: {{ region }}<br>
         Оператор: {{ mobile_operator }}
         {% endif %}
