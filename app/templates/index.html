@@ -20,13 +20,18 @@
 <p>Введите номер</p>
 <form action="index" method="post"><p>
     <small>+7</small>
-    <input type="tel" name="tel" pattern="[0-9]{10}" />
+    <input type="tel" name="tel" pattern="[0-9]{10}" value={{request_number}} />
     <input type="submit" value="Отправить"/></p>
     <p>
         {% if region != '' and mobile_operator != '' %}
         Номер: {{ request_number }}<br>
         Регион: {{ region }}<br>
+        {% if moved_mobile_operator == '' %}
         Оператор: {{ mobile_operator }}
+        {% else %}
+        Оператор: {{ moved_mobile_operator }}<br>
+        Перенесен из: {{ mobile_operator }}
+        {% endif %}
         {% endif %}
     </p>
 </form>

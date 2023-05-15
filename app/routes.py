@@ -14,6 +14,7 @@ def index():
     region = ''
     mobile_operator = ''
     request_number = ''
+    moved_mobile_operator = ''
 
     if 'tel' in params_post:
         request_number = params_post['tel']
@@ -25,5 +26,9 @@ def index():
         mn = MovedNumbers.query.get(request_number)
         if pn is not None:
             region = pn.region
-            mobile_operator = pn.mobile_operator if mn is None else mn.mobile_operator
-    return render_template('index.html', region=region, mobile_operator=mobile_operator, request_number=request_number)
+            mobile_operator = pn.mobile_operator
+            moved_mobile_operator = mn.mobile_operator if mn is not None else ''
+    return render_template(
+        'index.html', region=region, mobile_operator=mobile_operator,
+        moved_mobile_operator=moved_mobile_operator, request_number=request_number
+    )
